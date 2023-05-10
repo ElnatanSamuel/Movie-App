@@ -1,24 +1,55 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import NavBar from "./components/NavBar";
+import { MovieContext } from "./context/MovieContext";
+import Home from "./pages/Home";
+import LoginReg from "./pages/LoginReg";
+import { useState, useEffect } from "react";
 
 function App() {
+  const [isLoggedIn, setISLoggedIn] = useState(false);
+  const [userAccount, setUserAccount] = useState("");
+  const [userAccountView, setUserAccountView] = useState(false);
+  const [bookmarkItems, setBookmarkItems] = useState([]);
+  const [bookmarkTvItems, setBookmarkTvItems] = useState([]);
+
+  useEffect(() => {
+    const loggedInData = JSON.parse(localStorage.getItem("logged in"));
+
+    if (loggedInData) {
+      setISLoggedIn(loggedInData);
+    }
+
+    const userData = localStorage.getItem("username");
+
+    if (userData) {
+      setUserAccount(userData);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("logged in", JSON.stringify(isLoggedIn));
+    localStorage.setItem("username", userAccount);
+  }, [isLoggedIn, userAccount]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <MovieContext.Provider
+      value={{
+        isLoggedIn,
+        setISLoggedIn,
+        userAccount,
+        setUserAccount,
+        setUserAccountView,
+        userAccountView,
+        bookmarkItems,
+        setBookmarkItems,
+        bookmarkTvItems,
+        setBookmarkTvItems,
+      }}
+    >
+      <div className="App max-w-7xl">
+        {isLoggedIn ? <Home /> : <LoginReg />}
+      </div>
+    </MovieContext.Provider>
   );
 }
 
