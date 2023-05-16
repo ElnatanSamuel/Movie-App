@@ -104,7 +104,7 @@ const HomePage = () => {
                 />
               ) : (
                 <>
-                  <div className="md:grid grid-cols-5 sm:grid-cols-3">
+                  <div className="listitems">
                     {movieSearchData.map((movieItem) => {
                       const date = movieItem.release_date.split("-");
                       const year = date[0];
@@ -159,7 +159,7 @@ const HomePage = () => {
                       );
                     })}
                   </div>
-                  <div className="md:grid grid-cols-5 sm:grid-cols-3">
+                  <div className="listitems">
                     {tvSearchData.map((tvItem) => {
                       const date = tvItem.first_air_date.split("-");
                       const year = date[0];

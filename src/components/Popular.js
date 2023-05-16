@@ -33,7 +33,7 @@ const Popular = () => {
   return (
     <div>
       <p className="pt-4 text-white text-2xl font-light">Popular</p>
-      <div className="md:grid grid-cols-5 sm:grid-cols-3">
+      <div className="listitems">
         {topData.map((topItem) => {
           const date = topItem.release_date.split("-");
           const year = date[0];
@@ -68,7 +68,7 @@ const Popular = () => {
           );
         })}
       </div>
-      <div className="md:grid grid-cols-5 sm:grid-cols-3">
+      <div className="listitems2">
         {tvData.map((tvItem) => {
           const date = tvItem.first_air_date.split("-");
           const year = date[0];

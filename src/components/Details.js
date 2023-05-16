@@ -71,7 +71,7 @@ const Details = () => {
     <>
       {data ? (
         <>
-          <div className="pt-8 flex flex-col items-center w-screen h-screen mb-16">
+          <div className="details pt-8 flex flex-col items-center mb-16">
             <img
               className="imgdetail"
               src={"https://image.tmdb.org/t/p/original/" + data.backdrop_path}
@@ -98,7 +98,7 @@ const Details = () => {
               Similar Movies
             </p>
             {similarData ? (
-              <div className="grid grid-cols-5 mb-4 w-full">
+              <div className="listitems">
                 {similarData.map((similarItem) => {
                   const date = similarItem.release_date.split("-");
                   const year = date[0];
@@ -154,7 +154,7 @@ const Details = () => {
               </div>
             ) : null}
             {similarTvData ? (
-              <div className="grid grid-cols-5 items-center mb-4 w-full">
+              <div className="listitems">
                 {similarTvData.map((tvItem) => {
                   const date = tvItem.first_air_date.split("-");
                   const year = date[0];
@@ -178,7 +178,7 @@ const Details = () => {
                         className="bookmark p-1 absolute top-2 right-2 cursor-pointer"
                         onClick={(e) => handleTvBookmarked(tvItem)}
                       />
-                      <div className="mt-2 flex space-x-2">
+                      <div className="mt-2 flex space-x-2 ">
                         <p className="text-gray-500 text-xs">{year}</p>
                         <div className="flex space-x-1">
                           <UilTvRetro

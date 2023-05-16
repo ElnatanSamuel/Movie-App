@@ -66,7 +66,7 @@ const Movies = () => {
         />
       ) : (
         <div>
-          <div className="md:grid grid-cols-5 sm:grid-cols-3">
+          <div className="listitems">
             {movieData.map((topItem) => {
               const date = topItem.release_date.split("-");
               const year = date[0];

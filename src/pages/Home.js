@@ -54,9 +54,9 @@ const Home = () => {
   }, [bookmarkTvItems]);
   return (
     <BrowserRouter>
-      <div className="flex ml-28 ">
+      <div className="flex ">
         <NavBar />
-        <div>
+        <div className="homepage">
           <Routes>
             <Route index path="/" element={<HomePage />} />
             <Route path="useraccount" element={<UserAccount />} />

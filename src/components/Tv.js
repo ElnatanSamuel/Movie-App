@@ -66,7 +66,7 @@ const TvPage = () => {
         />
       ) : (
         <div>
-          <div className="grid grid-cols-5 mb-4 md:grid-cols-3">
+          <div className="listitems">
             {tvData.map((tvItem) => {
               const date = tvItem.first_air_date.split("-");
               const year = date[0];

@@ -59,7 +59,7 @@ const Recomended = () => {
   return (
     <div>
       <p className="pt-4 text-white text-2xl font-light">Top Rated</p>
-      <div className="md:grid grid-cols-5 sm:grid-cols-3">
+      <div className="listitems">
         {topData.map((topItem) => {
           const date = topItem.release_date.split("-");
           const year = date[0];
@@ -103,7 +103,7 @@ const Recomended = () => {
           );
         })}
       </div>
-      <div className="sm:grid-cols-2 md:grid grid-cols-5 mb-4">
+      <div className="listitems2">
         {tvData.map((tvItem) => {
           const date = tvItem.first_air_date.split("-");
           const year = date[0];

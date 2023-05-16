@@ -71,7 +71,7 @@ const TvDetails = () => {
     <>
       {data ? (
         <>
-          <div className="pt-8 flex flex-col items-center w-screen h-screen mb-16">
+          <div className="details pt-8 flex flex-col items-center h-screen mb-16">
             <img
               className="imgdetail"
               src={"https://image.tmdb.org/t/p/original/" + data.backdrop_path}
@@ -98,7 +98,7 @@ const TvDetails = () => {
               Similar Movies
             </p>
             {similarData ? (
-              <div className="grid grid-cols-5 mb-4 w-full">
+              <div className="grid grid-cols-5 mb-4">
                 {similarData.map((similarItem) => {
                   const date = similarItem.release_date.split("-");
                   const year = date[0];

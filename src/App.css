@@ -2,6 +2,34 @@
   height: calc(100vh - 40px);
   border-radius: 20px;
   margin: 20px 20px;
+  padding: 1rem;
+  width: 4rem;
+  background: rgb(22, 29, 47);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  z-index: 50;
+}
+
+.navmenu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.navmenuitem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 4rem;
+}
+
+.navmenuitems {
+  margin-bottom: 1.5rem;
 }
 
 .logincont {
@@ -73,9 +101,27 @@
 }
 
 .imgdetail {
-  width: 900px;
+  width: 600px;
   border-radius: 20px;
 }
+
+.listitems {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.listitems2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.details {
+  width: calc(100vw - 140px);
+}
+
+/* media queries */
+
+/* 1500-4k */
 
 @media (min-width: 1500px) {
   .logincont {
@@ -83,21 +129,101 @@
     height: 900px;
     border-radius: 20px;
   }
+  .listitems {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .listitems2 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
 }
 
+/* tab - 1024 */
+
+@media (max-width: 1024px) {
+  .listitems {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .listitems2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* sm - tab */
+
 @media (max-width: 768px) {
-  /* .navbar {
-    height: 50px;
-    position: fixed;
-    top: 1px;
+  .navbar {
+    width: calc(100vw - 40px);
+    height: 4rem;
+    display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    width: calc(100vw - 40px);
-  } */
+    position: fixed;
+    top: -15px;
+    left: 0px;
+    z-index: 60;
+  }
+
+  .navmenu {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .navmenuitem {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0rem;
+  }
+
+  .navmenuitems {
+    margin-right: 1.5rem;
+    margin-bottom: 0rem;
+  }
+
+  .homepage {
+    margin-top: 4rem;
+    margin-left: 10px;
+  }
+
+  .searchinput {
+    width: calc(100vw - 20px);
+  }
+
   .logincont {
     width: 500px;
     height: 500px;
     border-radius: 20px;
+  }
+  .listitems {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .listitems2 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 425px) {
+  .listitems {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .listitems2 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 375px) {
+  .listitems {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+
+  .listitems2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }

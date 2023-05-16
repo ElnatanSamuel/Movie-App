@@ -35,7 +35,7 @@ const Bookmark = () => {
       {bookmarkItems.length !== 0 ? (
         <p className="pt-4 text-white text-2xl font-light">Bookmarked Movies</p>
       ) : null}
-      <div className="md:grid grid-cols-5 sm:grid-cols-3">
+      <div className="listitems">
         {bookmarkItems.map((topItem) => {
           const date = topItem.release_date.split("-");
           const year = date[0];
@@ -85,7 +85,7 @@ const Bookmark = () => {
           Bookmarked TV shows
         </p>
       ) : null}
-      <div className="md:grid grid-cols-5 sm:grid-cols-3">
+      <div className="listitems">
         {bookmarkTvItems.map((tvItem) => {
           const date = tvItem.first_air_date.split("-");
           const year = date[0];
