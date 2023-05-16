@@ -1,3 +1,8 @@
+.megahomepage {
+  display: flex;
+  margin-left: 6rem;
+}
+
 .navbar {
   height: calc(100vh - 40px);
   border-radius: 20px;
@@ -153,6 +158,11 @@
 /* sm - tab */
 
 @media (max-width: 768px) {
+  .megahomepage {
+    display: flex;
+    flex-direction: col;
+    margin-left: 0rem;
+  }
   .navbar {
     width: calc(100vw - 40px);
     height: 4rem;

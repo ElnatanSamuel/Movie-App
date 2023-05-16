@@ -54,7 +54,7 @@ const Home = () => {
   }, [bookmarkTvItems]);
   return (
     <BrowserRouter>
-      <div className="flex ">
+      <div className="megahomepage">
         <NavBar />
         <div className="homepage">
           <Routes>
