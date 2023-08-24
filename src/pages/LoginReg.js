@@ -168,6 +168,8 @@ const LoginReg = () => {
               Sign in
             </button>
             {/* </Link> */}
+            <p className="text-center">Demo email: 123@gmail.com</p>
+            <p className="text-center">Demo password: 1234567</p>
           </div>
         </div>
       ) : null}
